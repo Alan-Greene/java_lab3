@@ -37,7 +37,7 @@ public class Ex1 {
         double gross_pay = in.nextDouble();
 
         // calculating tax
-        if (gross_pay <= TAX_BRACKET){
+        if (gross_pay < TAX_BRACKET){
             taxable_income = gross_pay - TAX_ALLOWANCE_LOWER;
             if(Character.toString(ms).matches("s") || Character.toString(ms).matches("S")) {
                 tax_paid = taxable_income * TAX_SINGLE;
@@ -48,7 +48,7 @@ public class Ex1 {
             }
         } else {
             taxable_income = gross_pay - TAX_ALLOWANCE_UPPER;
-            if(Character.toString(ms).matches("m") || Character.toString(ms).matches("M")) {
+            if(Character.toString(ms).matches("s") || Character.toString(ms).matches("S")) {
                 tax_paid = taxable_income * TAX_SINGLE;
                 net_income = gross_pay - tax_paid;
             } else {
@@ -68,6 +68,6 @@ public class Ex1 {
             password_check = in.nextLine();
         }
 
-        System.out.printf("%s %s %s %c %.2f %.2f %.2f", emp_id, name, address, ms, gross_pay, net_income, tax_paid);
+        System.out.printf("%s %n%s %n%s %n%c %n%.2f %n%.2f %n%.2f", emp_id, name, address, ms, gross_pay, net_income, tax_paid);
     }
 }
